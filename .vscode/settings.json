@@ -1,0 +1,33 @@
+{
+    "editor.inlineSuggest.enabled": false,
+    "github.copilot.enable": {
+        "*": false
+    },
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "cursor.cpp.disabledLanguages": [
+        "python",
+        "markdown",
+        "plaintext",
+        "javascript",
+        "typescript",
+        "javascriptreact",
+        "typescriptreact",
+        "html",
+        "css",
+        "scss",
+        "json",
+        "jsonc",
+        "java",
+        "c",
+        "cpp",
+        "csharp",
+        "php",
+        "go",
+        "rust",
+        "shellscript",
+        "powershell",
+        "yaml",
+        "xml",
+        "sql"
+    ]
+}

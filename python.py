@@ -82,8 +82,8 @@ def count_times_sth_appears(lista):
 # print(f"lista_de_items_repetidos_y_apariciones: {count_times_sth_appears(mi_lista)}")
 
 
-mi_list1=[1,3,5,8,9]
-mi_list2=[2,4,6,8,9]
+#mi_list1=[1,3,5,8,9]
+#mi_list2=[2,4,6,8,9]
 
 # 7) Encontrar los elementos comunes entre dos listas
 def find_common_element(first_list,second_list):
@@ -108,21 +108,30 @@ def product_calculated(lista):
 # product_calculated(mi_list)
 # print(f"product_calculated: {product_calculated(mi_list)}")
 
+my_list = [1,2,3,4]
 # 9) Buscar la posición de un número (-1 si no está)
 def search_position(lista,position):
-	for l in range(len(lista)):
-		#print(l)
-		print(position)
-		if position == lista[l]:
-			index = lista.index(lista[l])
+	for l in lista:
+		if position == l:
+			index = lista.index(l)
 			return index
-		else:
-			return -1
+	return -1
 
-search_position(mi_list,4)
-search_position(mi_list,9)
+#search_position(my_list,4)
+#search_position(my_list,9)
 
-print(f"YES - search_position: {search_position(mi_list,4)}")
-print(f"NO - search_position: {search_position(mi_list,9)}")
+#print(f"YES - search_position: {search_position(my_list,4)}")
+#print(f"NO - search_position: {search_position(my_list,9)}") 
 
+mi_list1=[1,3,5,8,9]
+mi_list2=[2,4,6,8,9]
 # 10) Sumar dos listas de igual tamaño, elemento por elemento
+def add_both_lists_by_elements(lista1,lista2):
+	suma = 0
+	for l in lista1:
+		index = lista1.index(l)
+		print(index , lista1[l])
+
+add_both_lists_by_elements(mi_list1,mi_list2)
+
+#print(f"add_both_lists_by_elements: {add_both_lists_by_elements(mi_list1,mi_list2)}")

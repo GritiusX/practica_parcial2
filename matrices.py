@@ -30,6 +30,12 @@ matriz_no_simetrica = [
 	[0,0,0]
 ]
 
+matriz_rotar = [
+	[1,2,3],
+	[4,5,6],
+	[7,8,9]
+]
+
 # 1) Sumar todos los elementos de una matriz de enteros
 def add_all_elements_of_matrix(matriz):
 	suma = 0
@@ -102,19 +108,19 @@ def simetric_matrix(matriz):
 # ========================================================================================
 # 7) Calcular el producto de dos matrices MxN x NxZ
 def multiply_two_matrix(matriz1, matriz2):
-    new_matrix = []
-    if len(matriz1[0]) == len(matriz2):
-        for i in range(len(matriz1)):            # fila del resultado
-            fila = []
-            for j in range(len(matriz2[0])):     # columna del resultado
-                suma = 0                         # arranca en 0 en cada celda
-                for k in range(len(matriz2)):    # recorre los pares
-                    suma += matriz1[i][k] * matriz2[k][j]
-                fila.append(suma)
-            new_matrix.append(fila)
-        return new_matrix
-    else:
-        return -1
+	new_matrix = []
+	if len(matriz1[0]) == len(matriz2):
+		for i in range(len(matriz1)):            # fila del resultado
+			fila = []
+			for j in range(len(matriz2[0])):     # columna del resultado
+				suma = 0                         # arranca en 0 en cada celda
+				for k in range(len(matriz2)):    # recorre los pares
+					suma += matriz1[i][k] * matriz2[k][j]
+				fila.append(suma)
+			new_matrix.append(fila)
+		return new_matrix
+	else:
+		return -1
 
 # 8) Buscar un elemento y devolver su posición (fila, columna)
 def search_element_and_give_position(matriz,elemento):
@@ -133,9 +139,15 @@ def count_many_0(matriz):
 				zeros += 1
 	return zeros
 
-# 10) Rotar una matriz cuadrada 90° en sentido horario
+# 10) Rotar una matriz cuadrada 90° en sentido horario (fila 0 termina siendo ultima columna, fila 1 anteultima, etc ...)
 def rotate_matrix(matriz):
 	rotated_matrix = []
+	for fila in matriz:
+		rotated_matrix.append(fila[:])
+
 	for i in range(len(matriz)):
+		col_size = len(matriz[0]) - 1 - i # 3x3 = 3 - 1 = 2		
 		for j in range(len(matriz)):
+			rotated_matrix[j][col_size] = matriz[i][j]
 			
+	return rotated_matrix

@@ -4,8 +4,7 @@ mi_lista = [1,2,2,2,4,4,9,0,9,13]
 def sumar_elementos_lista(lista):
 	suma = 0
 	for l in range(len(lista)):
-		print(int(lista[l]))
-		suma = suma + int(lista[l])
+		suma = suma + lista[l]
 	return suma
 
 """ var = sumar_elementos_lista(mi_lista)
@@ -33,10 +32,10 @@ print(f"list_inverted: {var}") """
 
 # 4) Encontrar el número máximo en una lista de enteros
 def encontrar_num_max(lista):
-	acc = 0
+	acc = lista[0]
 
 	for l in range(len(lista)):
-		if l < len(lista) and lista[l] > acc:
+		if lista[l] > acc:
 			acc = lista[l]
 	return acc
 
@@ -110,11 +109,10 @@ def product_calculated(lista):
 
 my_list = [1,2,3,4]
 # 9) Buscar la posición de un número (-1 si no está)
-def search_position(lista,position):
-	for l in lista:
-		if position == l:
-			index = lista.index(l)
-			return index
+def search_position(lista, numero):
+	for i in range(len(lista)):
+		if lista[i] == numero:
+			return i
 	return -1
 
 #search_position(my_list,4)
@@ -125,13 +123,17 @@ def search_position(lista,position):
 
 mi_list1=[1,3,5,8,9]
 mi_list2=[2,4,6,8,9]
+
 # 10) Sumar dos listas de igual tamaño, elemento por elemento
 def add_both_lists_by_elements(lista1,lista2):
-	suma = 0
-	for l in lista1:
-		index = lista1.index(l)
-		print(index , lista1[l])
+	lista_suma = []
+	for l in range(len(lista1)):
+		print("lista1", lista1[l], "+" ,"lista2",lista2[l])
 
-add_both_lists_by_elements(mi_list1,mi_list2)
+		add = lista1[l] + lista2[l]
+		print("add: ",add)
+		lista_suma.append(add)
+		print("lista_suma: ", lista_suma)
+	return lista_suma
 
-#print(f"add_both_lists_by_elements: {add_both_lists_by_elements(mi_list1,mi_list2)}")
+print(f"add_both_lists_by_elements: {add_both_lists_by_elements(mi_list1,mi_list2)}")
